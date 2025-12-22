@@ -10,7 +10,7 @@ class CompactMaFileManager:
         self.username = "@Nora_Bobra_CS2"
         self.window = tk.Tk()
         self.window.title("MaFile Manager")
-        self.window.geometry("520x580")
+        self.window.geometry("620x720")  # Увеличил высоту окна
         self.window.configure(bg='#000000')
         self.window.resizable(False, False)
         
@@ -42,7 +42,7 @@ class CompactMaFileManager:
         """Центрирование окна на экране"""
         self.window.update_idletasks()
         width = 520
-        height = 580
+        height = 620  # Увеличил высоту
         x = (self.window.winfo_screenwidth() // 2) - (width // 2)
         y = (self.window.winfo_screenheight() // 2) - (height // 2)
         self.window.geometry(f'{width}x{height}+{x}+{y}')
@@ -320,7 +320,7 @@ class CompactMaFileManager:
                             cursor='hand2')
         copy_btn.pack(side='left')
         
-        # Текстовое поле лога с прокруткой
+        # Текстовое поле лога с прокруткой - УВЕЛИЧЕНА ВЫСОТА
         log_container = tk.Frame(log_frame, bg=self.colors['border'])
         log_container.pack(fill='both', expand=True)
         
@@ -328,8 +328,9 @@ class CompactMaFileManager:
         scrollbar = tk.Scrollbar(log_container)
         scrollbar.pack(side='right', fill='y')
         
+        # Увеличенная высота лога (height=8 вместо height=6)
         self.log_text = tk.Text(log_container,
-                               height=6,
+                               height=8,  # УВЕЛИЧЕНО с 6 до 8
                                font=('Consolas', 8),
                                bg=self.colors['entry_bg'],
                                fg=self.colors['text'],
@@ -525,9 +526,9 @@ class CompactMaFileManager:
                                 anchor='w')
         asf_log_label.pack(fill='x', pady=(0, 5))
         
-        # Текстовое поле лога ASF
+        # Текстовое поле лога ASF - УВЕЛИЧЕНА ВЫСОТА
         self.asf_log_text = scrolledtext.ScrolledText(asf_log_frame,
-                                                     height=8,
+                                                     height=10,  # УВЕЛИЧЕНО с 8 до 10
                                                      font=('Consolas', 8),
                                                      bg=self.colors['entry_bg'],
                                                      fg=self.colors['text'],
